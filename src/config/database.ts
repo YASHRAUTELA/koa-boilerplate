@@ -1,4 +1,4 @@
-import mysql, { RowDataPacket } from "mysql2/promise";
+import { createPool, RowDataPacket } from "mysql2/promise";
 import { CustomError } from "./error";
 
 interface MySqlErrorType {
@@ -8,7 +8,7 @@ interface MySqlErrorType {
     sqlState: string;
     sqlMessage: string;
 }
-const db = mysql.createPool({
+const db = createPool({
     host: process.env.DB_HOST || "localhost",
     user: process.env.DB_USER || "root",
     password: process.env.DB_PASSWORD || "12345678",

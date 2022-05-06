@@ -4,7 +4,7 @@
   "description": "boilerplate with express, ts, eslint",
   "main": "index.js",
   "scripts": {
-    "start": "tsc && nodemon",
+    "start": "nodemon",
     "start:dev": "nodemon src/index.ts",
     "build": "tsc",
     "format": "prettier --config .prettierrc.json --write src/**/*.ts"
