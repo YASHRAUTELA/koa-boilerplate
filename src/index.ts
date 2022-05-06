@@ -57,6 +57,7 @@ app.use(async (ctx, next: Next) => {
 });
 
 app.use(routes.routes());
+app.use(routes.allowedMethods());
 
 // Start server
 app.listen(port, () => console.log(`Server is listening on port ${port}!`));

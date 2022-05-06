@@ -1,5 +1,5 @@
 import Router from "koa-router";
 import { appController } from "../controller/AppController";
-const routes = new Router();
-routes.get("/", appController.getData);
-export { routes as appRoutes };
+const router = new Router();
+router.get("/", appController.getData);
+export const appRoutes = router.routes();

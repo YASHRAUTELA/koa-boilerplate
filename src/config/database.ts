@@ -1,5 +1,4 @@
 import { createPool, RowDataPacket } from "mysql2/promise";
-import { CustomError } from "./error";
 
 interface MySqlErrorType {
     code: string;
@@ -23,5 +22,5 @@ export const query = (sql: string, values?: any | any[] | { [param: string]: any
         })
         .catch((reason: MySqlErrorType) => {
             const { sqlMessage } = reason;
-            throw new CustomError(sqlMessage, 500, {}, reason);
+            throw new Error(sqlMessage);
         });
