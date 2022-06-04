@@ -18,4 +18,4 @@ const swaggerDocs = (app: Koa) => {
     );
 };
 
-export default swaggerDocs;
+export { swaggerDocs };

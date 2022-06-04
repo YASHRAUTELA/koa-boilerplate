@@ -6,9 +6,7 @@ import { routes } from "./routes";
 import compose from "koa-compose";
 import { config } from "dotenv";
 import KoaLogger from "koa-logger";
-import appSecurity from "./config/secure";
-import errorHandler from "./config/error";
-import swaggerDocs from "./config/documentation";
+import { swaggerDocs, errorHandler, appSecurity } from "./config";
 
 config({ path: `${__dirname}` + "/.env" });
 const port = process.env.PORT || 5000;

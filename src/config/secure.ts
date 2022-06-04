@@ -26,4 +26,4 @@ const appSecurity = compose([
     koaHelmet.noSniff(),
 ]);
 
-export default appSecurity;
+export { appSecurity };

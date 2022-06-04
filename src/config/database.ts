@@ -14,7 +14,7 @@ const db = createPool({
     database: process.env.DB_NAME || "scrumbooster_new",
 });
 
-export const query = (sql: string, values?: any | any[] | { [param: string]: any }) =>
+const query = (sql: string, values?: any | any[] | { [param: string]: any }) =>
     db
         .execute(sql, values)
         .then((value) => {
@@ -24,3 +24,5 @@ export const query = (sql: string, values?: any | any[] | { [param: string]: any
             const { sqlMessage } = reason;
             throw new Error(sqlMessage);
         });
+
+export { query };

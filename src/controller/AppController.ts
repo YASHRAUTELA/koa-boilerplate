@@ -1,13 +1,14 @@
-import { query } from "../config/database";
+import { error, query } from "../config";
 import { Context, Next } from "koa";
 
 class AppController {
     async getData(ctx: Context, next: Next) {
         try {
             const data = await query("SELECT * from users where email=?", ["test@gmail.com"]);
+            error(ctx, "HeaderAuthTokenError");
             ctx.body = { data: "App Success!", content: data };
         } catch (err: any) {
-            ctx.throw(500, err.message);
+            ctx.throw(err);
         }
     }
 
