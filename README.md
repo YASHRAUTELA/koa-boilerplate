@@ -1,5 +1,14 @@
-# koa2-ts-eslint
-Express JS Boilerplate with Typescript & Eslint configured.
+# koa-boilerplate
+Koa Boilerplate/Template for node.js
+
+### Features :
+- Typescript Enabled
+- Eslint Configured
+- Auto indent on save using Prettier
+- MySQL Connectivity
+- Joi validation
+- Error handling
+- Swagger UI API Documenation
 
 ### Editor Configuration : [🔗](https://code.visualstudio.com/docs/languages/typescript#_code-actions-on-save)
 
@@ -18,6 +27,3 @@ For Automatically fixing code in VS Code Editor:
         "source.organizeImports": true,
     }
 ```
-
-### Other Links :
-- MySQL Connectivity [🔗](https://github.com/YASHRAUTELA/express-ts-eslint/tree/mysql)
