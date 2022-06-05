@@ -12,7 +12,7 @@ config({ path: `${__dirname}` + "/.env" });
 const port = process.env.PORT || 5000;
 const app = new Koa();
 
-app.use(compose([KoaLogger(), cors(), bodyParser(), koaBody({ multipart: true }), appSecurity]));
+app.use(compose([KoaLogger(), cors(), koaBody({ multipart: true }), bodyParser(), appSecurity]));
 
 errorHandler(app);
 

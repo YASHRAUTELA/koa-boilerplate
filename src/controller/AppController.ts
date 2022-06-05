@@ -5,7 +5,8 @@ class AppController {
     async getData(ctx: Context, next: Next) {
         try {
             const data = await query("SELECT * from users where email=?", ["test@gmail.com"]);
-            error(ctx, "HeaderAuthTokenError");
+            // sample error handler
+            error({ ctx, type: "Unauthorized" });
             ctx.body = { data: "App Success!", content: data };
         } catch (err: any) {
             ctx.throw(err);

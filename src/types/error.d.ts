@@ -1,4 +1,5 @@
 type ErrorType =
+    | "BadRequest"
     | "HeaderAuthTokenError"
     | "Unauthorized"
     | "Forbidden"
@@ -9,4 +10,18 @@ type ErrorType =
 
 type ErrorCode = 400 | 401 | 403 | 404 | 420 | 490;
 
-export { ErrorType, ErrorCode };
+interface ErrorRequestType<T> {
+    ctx: T;
+    type: ErrorType;
+    message?: string;
+    code?: ErrorCode;
+    fields?: any;
+}
+
+interface ErrorResponseType {
+    message: string;
+    code: number;
+    details?: any;
+}
+
+export { ErrorRequestType, ErrorResponseType };
