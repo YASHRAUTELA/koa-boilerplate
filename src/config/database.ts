@@ -1,5 +1,7 @@
+import { config } from "dotenv";
 import { createPool, RowDataPacket } from "mysql2/promise";
 
+config({ path: `${__dirname}` + "/../../.env" });
 interface MySqlErrorType {
     code: string;
     errno: number;
@@ -11,7 +13,7 @@ const db = createPool({
     host: process.env.DB_HOST || "localhost",
     user: process.env.DB_USER || "root",
     password: process.env.DB_PASSWORD || "12345678",
-    database: process.env.DB_NAME || "scrumbooster_new",
+    database: process.env.DB_NAME || "test",
 });
 
 const query = (sql: string, values?: any | any[] | { [param: string]: any }) =>

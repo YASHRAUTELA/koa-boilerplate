@@ -8,7 +8,7 @@ import { config } from "dotenv";
 import KoaLogger from "koa-logger";
 import { swaggerDocs, errorHandler, appSecurity } from "./config";
 
-config({ path: `${__dirname}` + "/.env" });
+config({ path: `${__dirname}` + "/../.env" });
 const port = process.env.PORT || 5000;
 const app = new Koa();
 

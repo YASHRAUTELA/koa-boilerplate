@@ -6,7 +6,7 @@ class AppController {
         try {
             const data = await query("SELECT * from users where email=?", ["test@gmail.com"]);
             // sample error handler
-            error({ ctx, type: "Unauthorized" });
+            // error({ ctx, type: "Unauthorized" });
             ctx.body = { data: "App Success!", content: data };
         } catch (err: any) {
             ctx.throw(err);
