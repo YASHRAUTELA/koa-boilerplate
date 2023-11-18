@@ -1,6 +1,9 @@
 # koa-boilerplate
 Koa Boilerplate/Template for node.js
 
+#Node Version:
+v16.17.0
+
 ### Features :
 - Typescript Enabled
 - Eslint Configured
